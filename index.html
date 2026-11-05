@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7eee8">
+<title>A little something ♡</title>
+<meta name="description" content="A little scrapbook, made with love for you.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+:root{
+ --ink:#493a39;--muted:#897775;--rose:#b86f79;--rose-dark:#965660;
+ --paper:#fffaf5;--paper2:#f8eee8;--blush:#f1dce0;--line:#ead8d0;
+ --sage:#8a9b86;--shadow:0 24px 70px rgba(94,60,58,.10);
+ --serif:"DM Serif Display",Georgia,serif;--display:"Playfair Display",Georgia,serif;
+ --sans:"DM Sans",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:var(--sans);background:
+ radial-gradient(ellipse at 10% 5%,rgba(231,190,196,.34),transparent 32rem),
+ radial-gradient(ellipse at 95% 35%,rgba(225,213,192,.35),transparent 30rem),
+ #f7eee8;line-height:1.75}
+a{color:inherit}
+button{font:inherit}
+.grain{position:fixed;inset:0;pointer-events:none;opacity:.13;z-index:5;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E")}
+.topbar{width:min(1120px,calc(100% - 42px));margin:0 auto;padding:25px 0;display:flex;justify-content:space-between;align-items:center;gap:18px}
+.brand{font-family:var(--display);font-style:italic;font-size:19px;color:var(--rose-dark);text-decoration:none}
+.topmark{font-size:10px;letter-spacing:.23em;text-transform:uppercase;color:var(--muted)}
+.hero{min-height:650px;display:grid;place-items:center;padding:55px 22px 90px;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid rgba(184,111,121,.23);border-radius:50%;width:420px;height:420px;pointer-events:none}
+.hero:before{left:-260px;top:30px}.hero:after{right:-275px;bottom:10px;width:520px;height:520px}
+.hero-inner{width:min(760px,100%);text-align:center;position:relative;z-index:1}
+.stamp{display:inline-flex;align-items:center;gap:10px;padding:8px 15px;border:1px solid #dfc4c0;border-radius:99px;color:var(--rose-dark);font-size:10px;letter-spacing:.22em;text-transform:uppercase;background:rgba(255,250,245,.55)}
+.hero-spark{font-size:22px;color:var(--rose);margin:25px 0 4px;letter-spacing:.45em}
+h1{font:clamp(76px,14vw,142px)/.98 var(--serif);font-weight:400;letter-spacing:-.055em;margin:12px 0 20px;color:#65484a}
+.hero-sub{max-width:475px;margin:0 auto;color:#806f6c;font-size:15px;line-height:1.9}
+.hero-cta{display:inline-flex;align-items:center;gap:12px;margin-top:34px;padding:14px 23px;border-radius:3px;background:var(--rose-dark);color:#fffaf7;text-decoration:none;font-size:11px;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 10px 25px rgba(150,86,96,.2);transition:.25s}
+.hero-cta:hover{transform:translateY(-3px);background:#824851}
+.hero-foot{margin-top:58px;font:italic 15px var(--display);color:#a47c7d}
+main{width:min(900px,calc(100% - 34px));margin:0 auto 100px}
+.section{margin:0 auto 34px;scroll-margin-top:25px}
+.paper{background:var(--paper);border:1px solid rgba(220,194,183,.8);box-shadow:var(--shadow);position:relative}
+.paper:before{content:"";position:absolute;inset:9px;border:1px solid rgba(230,211,202,.65);pointer-events:none}
+.letter{padding:clamp(32px,7vw,76px) clamp(25px,8vw,88px)}
+.kicker{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--rose);font-weight:700}
+.section-title{font:clamp(36px,6vw,54px)/1.12 var(--serif);font-weight:400;letter-spacing:-.025em;margin:13px 0 9px;color:#60494a}
+.section-intro{font-size:13px;color:var(--muted);margin:0 0 32px}
+.letter-copy{font:16px/2 var(--display);color:#665553}
+.letter-copy p{margin:0 0 18px}
+.signature{margin-top:30px;font:italic 19px var(--display);color:var(--rose-dark)}
+.signature small{display:block;font:12px var(--sans);letter-spacing:.08em;color:var(--muted);margin-top:10px}
+.section-head{text-align:center;padding:65px 20px 30px}
+.section-head .section-title{margin-bottom:12px}
+.timeline{display:grid;gap:17px}
+.chapter{display:grid;grid-template-columns:105px 1fr;gap:24px;padding:30px 34px;align-items:start}
+.chapter-year{font:italic 34px var(--display);color:#bd8589;line-height:1.1;padding-top:4px}
+.chapter-tag{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);font-weight:700}
+.chapter h3{font:29px/1.2 var(--serif);font-weight:400;margin:5px 0 7px}
+.track{font-size:12px;color:var(--rose-dark);letter-spacing:.04em;margin:0 0 12px}
+.chapter p{font-size:13px;line-height:1.9;color:#806f6c;margin:0 0 18px;max-width:610px}
+.player{display:flex;align-items:center;gap:12px;background:#f8efeb;border:1px solid #eadbd4;padding:11px 13px;max-width:490px}
+.player-icon{width:31px;height:31px;border-radius:50%;background:#ead2d4;color:#995c65;display:grid;place-items:center;flex:none}
+.player-copy{min-width:0;flex:1}
+.player-copy strong{display:block;font-size:11px;font-weight:600}
+.player-copy span{font-size:10px;color:var(--muted)}
+audio{width:100%;height:30px;max-width:220px}
+.timeline-note{margin:25px auto 0;padding:25px 28px;text-align:center;max-width:700px;font:italic 17px/1.9 var(--display);color:#745d5b}
+.notes-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+details.note{background:var(--paper);border:1px solid #e8d5ce;box-shadow:0 8px 25px rgba(94,60,58,.055);transition:.2s}
+details.note[open]{background:#fffaf6;box-shadow:0 14px 35px rgba(94,60,58,.09)}
+.note summary{list-style:none;cursor:pointer;padding:20px 21px;display:flex;align-items:center;gap:13px;min-height:77px}
+.note summary::-webkit-details-marker{display:none}
+.note-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:#f5e6e5;color:#a56b72;font-size:17px;flex:none}
+.note-title{flex:1;font:21px var(--display);color:#654e4d}
+.note-plus{font-size:20px;color:#b17a7e;transition:transform .2s}
+.note[open] .note-plus{transform:rotate(45deg)}
+.note-body{padding:0 24px 24px 72px;font:14px/1.95 var(--display);color:#776462;animation:reveal .25s ease}
+@keyframes reveal{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+.closing{margin-top:55px;padding:55px 25px;text-align:center;background:#f0dfe0;border:1px solid #e4c9ca;position:relative;overflow:hidden}
+.closing:before{content:"✿";position:absolute;font-size:140px;opacity:.08;left:20px;top:-25px;color:#8d555e}
+.closing:after{content:"✿";position:absolute;font-size:140px;opacity:.08;right:20px;bottom:-55px;color:#8d555e}
+.closing blockquote{position:relative;z-index:1;max-width:650px;margin:0 auto;font:italic clamp(21px,3.5vw,29px)/1.65 var(--display);color:#704f52}
+.closing-sign{margin-top:24px;font:italic 17px var(--display);color:#9b666d}
+footer{text-align:center;padding:25px 15px 55px;color:#a48b85;font-size:10px;letter-spacing:.12em}
+footer span{color:var(--rose)}
+@media(max-width:650px){
+ .topbar{width:calc(100% - 32px);padding:19px 0}.topmark{font-size:8px}
+ .hero{min-height:570px;padding-top:35px}.hero-foot{margin-top:42px}
+ main{width:calc(100% - 22px)}
+ .letter{padding:38px 27px}.letter-copy{font-size:15px;line-height:1.9}
+ .chapter{grid-template-columns:1fr;gap:10px;padding:25px 23px}
+ .chapter-year{font-size:27px}.chapter h3{font-size:26px}
+ .player{flex-wrap:wrap}.player-copy{flex-basis:calc(100% - 50px)}audio{max-width:none;width:100%}
+ .notes-grid{grid-template-columns:1fr;gap:10px}
+ .note summary{padding:17px}.note-body{padding:0 20px 21px 68px}
+ .section-head{padding:50px 12px 25px}
+ .closing{padding:45px 25px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<header class="topbar">
+ <a class="brand" href="#top">A little something♡</a>
+ <div class="topmark">MADE FOR YOU · ✿ ♡ ✧ ୨୧</div>
+</header>
+
+<section class="hero" id="top">
+ <div class="hero-inner">
+  <div class="stamp">A LITTLE CORNER, JUST FOR YOU</div>
+  <div class="hero-spark">✿ &nbsp; ♡ &nbsp; ✧</div>
+  <h1>Baby</h1>
+  <p class="hero-sub">A few little notes, familiar words, and pieces of my heart for you to keep close. Open any page whenever you feel like it.</p>
+  <a class="hero-cta" href="#letter">Open your scrapbook <span>♡</span></a>
+  <div class="hero-foot">a little place to come back to, whenever you want</div>
+ </div>
+</section>
+
+<main>
+ <section class="section paper letter" id="letter">
+  <div class="kicker">PAGE ONE · A LITTLE NOTE</div>
+  <h2 class="section-title">To my dearest baby</h2>
+  <p class="section-intro">Nothing to reply to. Just something I wanted you to have.</p>
+  <div class="letter-copy">
+   <p>I made this little corner for you.</p>
+   <p>I know life can get overwhelming sometimes, and there are things you need to figure out, experiences you need to go through, and moments when you might just need some time for yourself.</p>
+   <p>I want you to have all of that.</p>
+   <p>I never want my love to feel like another responsibility or something you have to keep up with. You don't have to rush, force conversations, or feel guilty about having days when you need to focus on yourself.</p>
+   <p>I may not always know the right words or be able to make things better, but that doesn't mean I'm not here. I'll always want to listen, celebrate your little victories, comfort you on difficult days, and remind you that you're capable of so much.</p>
+   <p>So whenever things get a little too heavy, or you simply need a reminder that someone loves you, come here.</p>
+   <p>No expectations. No pressure. Just a little reminder that you've got someone in your corner.</p>
+  </div>
+  <div class="signature">I love you, baby. Always and Forever.<small>Yours only<br>Tangi ♡</small></div>
+ </section>
+
+ <section class="section" id="songs">
+  <div class="section-head">
+   <div class="kicker">A LITTLE TIMELINE OF MY HEART</div>
+   <h2 class="section-title">Every Song Leads Back to You</h2>
+   <p class="section-intro">Three chapters of my heart, each one a different phase of loving you. Listen in order, if you like. ♡</p>
+  </div>
+  <div class="timeline">
+   <article class="paper chapter">
+    <div class="chapter-year">2024</div>
+    <div>
+     <div class="chapter-tag">CHAPTER 1</div><h3>When my heart found you</h3>
+     <div class="track">Falling in Love — Cigarettes After Sex</div>
+     <p>2024 was when my heart started finding its way to you. Everything felt new, exciting, and a little unreal. I didn't know everything that was ahead of us, but I knew there was something about you that made me want to stay and discover it all.</p>
+     <div class="player"><div class="player-icon">♫</div><div class="player-copy"><strong>Our 2024 song</strong><span>Falling in Love ♡</span></div><audio controls preload="none"><source src="audio/song-2024.mp3" type="audio/mpeg">Your browser does not support audio.</audio></div>
+    </div>
+   </article>
+   <article class="paper chapter">
+    <div class="chapter-year">2025</div>
+    <div>
+     <div class="chapter-tag">CHAPTER 2</div><h3>When you became my person</h3>
+     <div class="track">You're All I Want — Cigarettes After Sex</div>
+     <p>By 2025, you weren't just someone I had fallen for. You had become someone I wanted to share my everyday life with. The ordinary moments, the silly conversations, the little things. It wasn't just about falling in love anymore. It was about choosing you in all those little moments.</p>
+     <div class="player"><div class="player-icon">♫</div><div class="player-copy"><strong>Our 2025 song</strong><span>You're All I Want ♡</span></div><audio controls preload="none"><source src="audio/song-2025.mp3" type="audio/mpeg">Your browser does not support audio.</audio></div>
+    </div>
+   </article>
+   <article class="paper chapter">
+    <div class="chapter-year">2026</div>
+    <div>
+     <div class="chapter-tag">CHAPTER 3</div><h3>The love I want you to feel</h3>
+     <div class="track">Nothing's Gonna Hurt You Baby — Cigarettes After Sex</div>
+     <p>And here we are in 2026. If the first song was about falling for you, and the second was about wanting you in my life, this one is about the kind of love I hope you feel with me. A love that gives you room to grow, to breathe, to find yourself, and to be exactly who you are. I can't promise life will never hurt, but I can promise that I'll always want to be someone you can turn to.</p>
+     <div class="player"><div class="player-icon">♫</div><div class="player-copy"><strong>Our 2026 song</strong><span>Nothing's Gonna Hurt You Baby ♡</span></div><audio controls preload="none"><source src="audio/song-2026.mp3" type="audio/mpeg">Your browser does not support audio.</audio></div>
+    </div>
+   </article>
+  </div>
+  <div class="paper timeline-note">I don't know what every coming year will look like, and I don't want you to feel like you have to have it all figured out either. I just wanted you to see a little piece of my heart through these songs. Each one reminds me of a different chapter, but somehow, they all lead back to you. I hope we get to make many more memories, at our own pace, one day at a time. I love you, baby. ♡</div>
+ </section>
+
+ <section class="section" id="notes">
+  <div class="section-head">
+   <div class="kicker">LITTLE NOTES FOR LATER</div>
+   <h2 class="section-title">Open when…</h2>
+   <p class="section-intro">Choose a little note. There's a message from me waiting inside.</p>
+  </div>
+  <div class="notes-grid">
+   <details class="note"><summary><span class="note-icon">☁</span><span class="note-title">You're overwhelmed</span><span class="note-plus">＋</span></summary><div class="note-body">Baby, breathe slow and long breathes for a moment. You don't have to have everything figured out today. It's okay to slow down, take a break, and do things at your own pace. I wish I could give you a very tight big hug and forehead kiss right now. Please be gentle with yourself, my love. ♡</div></details>
+   <details class="note"><summary><span class="note-icon">✿</span><span class="note-title">You doubt yourself</span><span class="note-plus">＋</span></summary><div class="note-body">Hey, my pretty woman. I wish you could see what and how much I see in you. You're doing better than you think, even when it doesn't feel that way. You don't have to prove anything to anyone, not even to me. I'm proud of you, baby. ♡</div></details>
+   <details class="note"><summary><span class="note-icon">♡</span><span class="note-title">You need some space</span><span class="note-plus">＋</span></summary><div class="note-body">Take your time, baby. You don't have to rush yourself, explain everything, or feel bad about needing a little time for yourself. I respect that you have your own things to work through. Please remember that you're allowed to take care of yourself, too. ♡</div></details>
+   <details class="note"><summary><span class="note-icon">💌</span><span class="note-title">You miss me</span><span class="note-plus">＋</span></summary><div class="note-body">Come here, my babyyyyyyyy mwaaaaaa! Consider this as a very tight hug, followed by a million kisses all over you. I wish I could be right there beside you, cuddling you and maybe slight annoying you. Until then, here's a little piece of me to keep you company, oh also I MISS YOU TOOOOOO MY BABY ♡</div></details>
+   <details class="note"><summary><span class="note-icon">🌷</span><span class="note-title">You need to feel loved</span><span class="note-plus">＋</span></summary><div class="note-body">Baby, you don't have to be happy, productive, cheerful, or have everything together to be loved. You don't have to earn it by doing anything. You're very very very precious to me just as you are. On the easy days and the difficult ones, I hope you never forget how special you are. ♡</div></details>
+   <details class="note"><summary><span class="note-icon">☀</span><span class="note-title">You've had a bad day</span><span class="note-plus">＋</span></summary><div class="note-body">I'm sorry today hasn’t been kind to you, Baby. I wish I could be there to hold you and keep you in my arms closed and make things feel a little better. For now, let yourself slow down. You don’t have to fix everything tonight or pretend that you’re okay when you’re not. Get cosy, come be beside me and lets end the bad day with good end with me always by your side.♡</div></details>
+   <details class="note"><summary><span class="note-icon">☾</span><span class="note-title">You can't sleep</span><span class="note-plus">＋</span></summary><div class="note-body">Hey, baby. It's time to put those thoughts aside for a little while. You've done enough for today. You deserve some good rest, some nice peace, and the sweetest loveliest dreams. (I’m just saying indirectly dream of us my love🤭🤏)I hope tomorrow feels a little lighter. Close those pretty eyes now of yours and come eep with me. Goodnight, my love. I love you soooo fucking much ♡</div></details>
+  </div>
+ </section>
+
+ <section class="closing">
+  <div class="kicker">BEFORE YOU GO</div>
+  <blockquote>“You don't have to have it all figured out. Just remember that your tangi is always with you, by your side and in your corner, always rooting for you.”</blockquote>
+  <div class="closing-sign">with all my love, ♡</div>
+ </section>
+</main>
+<footer>made with love, just for you from <span>tangiii ♡</span></footer>
+</body>
+</html>
